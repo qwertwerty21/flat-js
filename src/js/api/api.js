@@ -356,6 +356,8 @@
             response_properties : '',
             
             send_JSON : true,
+            
+            headers : null,
          };
          /*
           * determine params from function arguments
@@ -455,6 +457,11 @@
                conf.data = params.data;
             }
          }
+         
+         if (params.headers && flat.isObject(params.headers)) {
+            conf.headers = params.headers;
+         }
+         
          //var url = pub.url(slug);
          ////flat.debug(conf.data,'flat api conf data');
          /*
